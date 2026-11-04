@@ -154,3 +154,55 @@ footer {
     margin-top: 40px;
     font-size: 0.9rem;
 }
+
+/* ============================================
+   9. MEDIA QUERIES (RESPONSIVE DESIGN)
+   ============================================ */
+
+/* --- Tampilan Tablet (Lebar 768px ke atas) --- */
+@media (min-width: 768px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr); /* Kartu jadi 2 kolom */
+    }
+    
+    nav {
+        justify-content: flex-start; /* Menu navigasi geser ke kiri */
+        padding-left: 32px;
+    }
+}
+
+/* --- Tampilan Desktop (Lebar 1024px ke atas) --- */
+@media (min-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr); /* Kartu jadi 4 kolom */
+    }
+    
+    main {
+        padding: 0 40px; /* Ruang kiri-kanan lebih lega */
+    }
+    
+    header {
+        padding: 60px 20px; /* Header lebih tinggi */
+    }
+}
+
+/* --- Tampilan HP Kecil (Lebar maksimal 480px) --- */
+@media (max-width: 480px) {
+    header {
+        padding: 24px 16px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem; /* Judul mengecil agar tidak kepotong */
+    }
+    
+    nav {
+        gap: 16px; /* Jarak menu dirapatkan */
+        font-size: 0.9rem;
+    }
+    
+    .foto {
+        width: 80px; /* Foto profil mengecil */
+        height: 80px;
+    }
+}
