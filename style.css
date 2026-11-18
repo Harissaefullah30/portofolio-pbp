@@ -23,26 +23,32 @@ body {
 header {
     background: linear-gradient(135deg, #0066cc, #00aaff);
     color: white;
-    padding: 40px 20px;
+    padding: 50px 20px;
     text-align: center;
 }
 
+/* Perbaikan Foto Profil (Disesuaikan dengan foto jas hitam) */
 .foto {
-    width: 120px;
-    height: 120px;
+    width: 200px;           /* Sedikit diperbesar agar lebih jelas */
+    height: 200px;          
     border-radius: 50%;
-    border: 4px solid white;
-    object-fit: cover;
-    margin-bottom: 16px;
+    border: 5px solid white; 
+    object-fit: cover;      
+    
+    /* KUNCI: Menggeser fokus gambar ke bawah sedikit agar wajah pas di tengah */
+    object-position: center 20%; 
+    
+    margin-bottom: 20px;    
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Bayangan lebih tegas */
 }
 
 header h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 8px;
 }
 
 header p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     opacity: 0.9;
 }
 
@@ -162,11 +168,11 @@ footer {
 /* --- Tampilan Tablet (Lebar 768px ke atas) --- */
 @media (min-width: 768px) {
     .cards {
-        grid-template-columns: repeat(2, 1fr); /* Kartu jadi 2 kolom */
+        grid-template-columns: repeat(2, 1fr); 
     }
     
     nav {
-        justify-content: flex-start; /* Menu navigasi geser ke kiri */
+        justify-content: flex-start; 
         padding-left: 32px;
     }
 }
@@ -174,35 +180,95 @@ footer {
 /* --- Tampilan Desktop (Lebar 1024px ke atas) --- */
 @media (min-width: 1024px) {
     .cards {
-        grid-template-columns: repeat(4, 1fr); /* Kartu jadi 4 kolom */
+        grid-template-columns: repeat(4, 1fr); 
     }
     
     main {
-        padding: 0 40px; /* Ruang kiri-kanan lebih lega */
+        padding: 0 40px; 
     }
     
     header {
-        padding: 60px 20px; /* Header lebih tinggi */
+        padding: 70px 20px; 
     }
 }
 
 /* --- Tampilan HP Kecil (Lebar maksimal 480px) --- */
 @media (max-width: 480px) {
     header {
-        padding: 24px 16px;
+        padding: 30px 16px;
     }
     
     header h1 {
-        font-size: 1.5rem; /* Judul mengecil agar tidak kepotong */
+        font-size: 1.5rem; 
     }
     
     nav {
-        gap: 16px; /* Jarak menu dirapatkan */
+        gap: 16px; 
         font-size: 0.9rem;
     }
     
+    /* Foto profil mengecil di HP */
     .foto {
-        width: 80px; /* Foto profil mengecil */
-        height: 80px;
+        width: 120px; 
+        height: 120px;
     }
+}
+
+/* ========================================== */
+/* STYLING TOMBOL THEME TOGGLE                */
+/* ========================================== */
+.theme-btn {
+    background-color: transparent;
+    border: 2px solid white; /* Sesuaikan dengan warna teks nav Anda */
+    color: white;            /* Sesuaikan dengan warna teks nav Anda */
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    background-color: white;
+    color: #333; /* Warna teks saat hover, sesuaikan */
+}
+
+
+/* ========================================== */
+/* STYLING UNTUK DARK MODE                    */
+/* ========================================== */
+/* Ketika <body> memiliki class 'dark-mode', maka aturan di bawah ini berlaku */
+body.dark-mode {
+    background-color: #121212; /* Warna latar belakang gelap */
+    color: #e0e0e0;            /* Warna teks terang */
+}
+
+/* Mengubah warna header di dark mode */
+body.dark-mode header {
+    background: #1f1f1f;
+    /* Jika header Anda menggunakan linear-gradient, Anda perlu menimpanya */
+    /* background: linear-gradient(135deg, #1f1f1f, #333); */
+}
+
+/* Mengubah warna kartu (card) di dark mode */
+body.dark-mode .card {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    border: 1px solid #444; /* Opsional: menambah border agar terlihat jelas */
+}
+
+/* Mengubah warna link di dark mode agar tetap terbaca */
+body.dark-mode a {
+    color: #66b2ff;
+}
+
+/* Mengubah warna footer di dark mode */
+body.dark-mode footer {
+    background-color: #000000;
+    color: #888;
+}
+
+/* Mengubah warna navigasi di dark mode (jika nav Anda berwarna hitam) */
+body.dark-mode nav {
+    background-color: #1a1a1a; /* Sedikit lebih terang dari body */
 }
